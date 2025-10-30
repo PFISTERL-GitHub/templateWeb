@@ -6,7 +6,7 @@ const Utilisateurs = db.utilisateurs;
 const Op = db.Sequelize.Op;
 
 // Find a single Utilisateur with an login
-exports.login = (req, res) => {
+exports.login = (req, res) => { //getPollutions
   const utilisateur = {
     login: req.body.login,
     password: req.body.password
@@ -15,7 +15,7 @@ exports.login = (req, res) => {
   // Test
   let pattern = /^[A-Za-z0-9]{1,20}$/;
   if (pattern.test(utilisateur.login) && pattern.test(utilisateur.password)) {
-     Utilisateurs.findOne({ where: { login: utilisateur.login } })
+     Utilisateurs.findOne({ where: { login: utilisateur.login } }) //Pollutions.findOne
     .then(data => {
       if (data) {
         const user = {

@@ -8,7 +8,7 @@ var corsOptions = {
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   headers: 'Content-Type, Authorization',
   exposedHeaders:'Authorization'
-};
+	};
 
 app.use(cors(corsOptions));
 
